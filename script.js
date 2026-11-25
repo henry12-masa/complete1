@@ -203,6 +203,10 @@ const quizInfo = {
     "title": "華道家元資格",
     "desc": "花材の特徴、季節感、構成、作法、華道文化の基礎"
   },
+  "ikebanaKadoshihan": {
+    "title": "華道家元資格",
+    "desc": "華道の基礎知識、実務、用語、いけばな文化の基礎"
+  },
   "teaCulture": {
     "title": "茶道文化検定",
     "desc": "茶の湯の歴史、茶道具、作法、茶室、茶道文化の基礎"
@@ -242,6 +246,12 @@ const quizInfo = {
 
 
 };
+
+// 問題データが存在するカテゴリだけを表示する
+Object.keys(quizInfo).forEach(key => {
+  if (!Array.isArray(window.quizData?.[key])) delete quizInfo[key];
+});
+
 
 const pageTitle = document.getElementById("pageTitle");
 const pageDesc = document.getElementById("pageDesc");
